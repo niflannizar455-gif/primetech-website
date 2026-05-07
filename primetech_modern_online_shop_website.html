@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrimeTech | Modern Tech Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .navbar {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 700;
+      color: #38bdf8;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: white;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(to right, #0f172a, #111827);
+    }
+
+    .hero-content h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 span {
+      color: #38bdf8;
+    }
+
+    .hero-content p {
+      max-width: 700px;
+      margin: auto;
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 30px;
+      background: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: white;
+    }
+
+    section {
+      padding: 90px 10%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 40px;
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #cbd5e1;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .services-grid,
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 20px;
+      transition: 0.3s;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #38bdf8;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 180px;
+      background: #0f172a;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+    }
+
+    .contact-box {
+      background: #1e293b;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .contact-box p {
+      margin: 10px 0;
+      color: #cbd5e1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #020617;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 65px;
+      height: 65px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    @media(max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-content h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="logo">Prime<span>Tech</span></div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Welcome to <span>PrimeTech</span></h1>
+      <p>
+        Your trusted modern online tech store for smartphones, laptops, accessories,
+        gadgets, repairs, and premium technology products.
+      </p>
+      <a href="#products" class="btn">Explore Products</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-title">
+      <h2>About Us</h2>
+      <p>Modern Technology Solutions & Online Shopping Experience</p>
+    </div>
+
+    <div class="about">
+      <div class="about-box">
+        <h3>Who We Are</h3>
+        <p>
+          PrimeTech is a modern online tech store focused on delivering quality
+          electronics, gadgets, and accessories with excellent customer service.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>Why Choose Us</h3>
+        <p>
+          We provide trusted products, affordable pricing, modern technology,
+          fast support, and a smooth online shopping experience.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-title">
+      <h2>Services</h2>
+      <p>What We Offer</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="card">
+        <h3>Mobile Sales</h3>
+        <p>Latest smartphones and accessories at competitive prices.</p>
+      </div>
+
+      <div class="card">
+        <h3>Laptop Solutions</h3>
+        <p>Affordable laptops, upgrades, and technology support.</p>
+      </div>
+
+      <div class="card">
+        <h3>Device Repairs</h3>
+        <p>Professional repair services for phones and computers.</p>
+      </div>
+
+      <div class="card">
+        <h3>Online Orders</h3>
+        <p>Easy online ordering and customer support through WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="section-title">
+      <h2>Products</h2>
+      <p>Featured Technology Products</p>
+    </div>
+
+    <div class="products-grid">
+      <div class="card">
+        <div class="product-image">📱</div>
+        <h3>Smartphones</h3>
+        <p>Premium Android and iPhone devices.</p>
+      </div>
+
+      <div class="card">
+        <div class="product-image">💻</div>
+        <h3>Laptops</h3>
+        <p>Gaming, office, and student laptops.</p>
+      </div>
+
+      <div class="card">
+        <div class="product-image">⌚</div>
+        <h3>Smart Gadgets</h3>
+        <p>Smart watches, earbuds, and accessories.</p>
+      </div>
+
+      <div class="card">
+        <div class="product-image">🖥️</div>
+        <h3>Computer Parts</h3>
+        <p>PC components and technology accessories.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>Connect With PrimeTech</p>
+    </div>
+
+    <div class="contact-box">
+      <p><strong>Business:</strong> PrimeTech</p>
+      <p><strong>Email:</strong> primetech@email.com</p>
+      <p><strong>Phone:</strong> +94 77 123 4567</p>
+      <p><strong>Location:</strong> Colombo, Sri Lanka</p>
+      <a href="https://wa.me/94771234567" class="btn">Chat on WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 PrimeTech. All Rights Reserved.</p>
+  </footer>
+
+  <a href="https://wa.me/94771234567" class="whatsapp-btn">☎</a>
+
+</body>
+</html>
